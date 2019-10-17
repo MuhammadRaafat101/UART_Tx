@@ -46,23 +46,26 @@ int main(void)
 		LCD_displayString("    ");
 
 
-		if(DIO_read(PORT_B,PIN2))
+	/*	if(DIO_read(PORT_B,PIN2))
 		{
 			_delay_ms(250);
-				speed++;
+			speed++;
 		}
+		if(DIO_read(PORT_C,PIN4))
+		{
+			_delay_ms(250);
+			speed--;
+		}*/
 		LCD_gotoRawCol(0,6);
 		LCD_IntToStr(speed);
 		LCD_displayString("    ");
 
-		if(recieve == 'g')
-		{
 			UART_Send(speed);
 			_delay_ms(1);
 			UART_Send(sec);
-			recieve=0;
+			_delay_ms(1);
 
-		}
+
 	}
 }
 
